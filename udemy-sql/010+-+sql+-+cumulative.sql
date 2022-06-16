@@ -155,3 +155,17 @@ VALUES ('https://banner.jpg', NULL);
 
 INSERT INTO users (username)
 VALUES ('Nicole');
+
+
+SELECT name, count(*)
+FROM books
+JOIN authors ON authors.id=books.author_id
+GROUP BY authors.name;
+/* group by the "for each" item, GROUP BY and SELECT must contain common column*/
+
+
+SELECT photo_id, COUNT(*)
+FROM COMMENTS /* take all rows of comments*/
+WHERE photo_id < 3 /* filter individual rows of comments */
+GROUP BY photo_id /* apply grouping */
+HAVING COUNT(*) > 2; /* filter out some of the groups*/
