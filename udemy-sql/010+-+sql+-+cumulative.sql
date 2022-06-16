@@ -169,3 +169,17 @@ FROM COMMENTS /* take all rows of comments*/
 WHERE photo_id < 3 /* filter individual rows of comments */
 GROUP BY photo_id /* apply grouping */
 HAVING COUNT(*) > 2; /* filter out some of the groups*/
+
+/* find users where user has commented on first 50 photos and user added more than 20 comments on those photos*/
+
+SELECT user_id, COUNT(*)
+FROM comments
+WHERE photo_id < 50
+GROUP BY user_id /* use user_id instead of photo_id because searching for each user*/
+HAVING COUNT(*) > 20;
+
+
+SELECT manufacturer, SUM(price * units_sold)
+FROM phones
+GROUP BY manufacturer
+HAVING SUM(price * units_sold) > 2000000
