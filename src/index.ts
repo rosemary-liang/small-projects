@@ -45,3 +45,9 @@ type Quantity = 50 | 100;
 let quantity: Quantity = 100;
 
 type Metric = "cm" | "inch";
+
+// nullable types
+function greet(name: string) {
+  if (name) console.log(name.toUpperCase());
+  else console.log("Hola!");
+}
