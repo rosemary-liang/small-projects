@@ -51,3 +51,21 @@ function greet(name: string) {
   if (name) console.log(name.toUpperCase());
   else console.log("Hola!");
 }
+
+// optional chaining
+type Customer = {
+  birthday: Date;
+};
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = getCustomer(1);
+//optional property access operator (the question  mark) - only execute if not null or undefined
+console.log(customer?.birthday?.getFullYear());
+
+//optional element access operator (for arrays)
+
+let log: any = null;
+log?.("a"); // this will execute only if log is a valid function, otherwise will get 'undefined'
