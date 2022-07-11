@@ -1,6 +1,7 @@
 "use strict";
-let age = 20;
-if (age < 50)
-    age += 10;
-console.log(age);
+function calculateTax(income) {
+    if (income < 50000)
+        return income * 1.2;
+    return 1.3;
+}
 //# sourceMappingURL=index.js.map

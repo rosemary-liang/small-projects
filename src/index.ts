@@ -1,3 +1,11 @@
-let sales: number = 123_456_789;
-let course: string = "TypeScript";
-let is_published: boolean = true;
+let employee: {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+} = {
+  id: 1,
+  name: "",
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
